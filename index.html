@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Train schedule</title>
+		<!-- jQuery -->
+  		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	  	<!-- Bootstrap CDN-->
+	  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	  	
+	</head>
+	<body>
+		<div class= "container">
+			<div class="row">
+				<div class="header">
+					<h1>Train Schedule</h1>
+				</div>
+			</div>
+			<div class = "row" id="trainSchedule">
+				<table class="table table-striped" id ="trainTable">
+					<thead>
+						<th>Train Name</th>
+						<th>Destination</th>
+						<th>Frequency (min)</th>
+						<th>Next Arrival</th>
+						<th>Minutes Away</th>
+					</thead>
+					<tbody id="trainTableBody">
+					</tbody>
+				</table>
+			</div>
+			<div class = "row" id ="addTrain">
+				<form>
+					<div class="form-group">
+						<label for="trainName">Train Name</label>
+						<input class="form-control" id="trainName" type="text">
+					</div>
+					<div class="form-group">
+						<label for="destination">Destination</label>
+						<input class="form-control" id="destination" type="text">
+					</div>
+					<div class="form-group">
+						<label for="firstTrainTime">First Train Time (military time)</label>
+						<input class="form-control" id="firstTrainTime" type="text">
+					</div>
+					<div class="form-group">
+						<label for="frequency">Frequency (min)</label>
+						<input class="frequency" id="frequency" type="text">
+					</div>
+					<button class="btn btn-primary" id="submitTrain" type="submit">Add This Train</button>
+
+				</form>
+			</div>
+		</div>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	  	<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAmf42pgykwx8OlpMbGk9H9Je5CcJF3AWo",
+		    authDomain: "trains-1f042.firebaseapp.com",
+		    databaseURL: "https://trains-1f042.firebaseio.com",
+		    storageBucket: "trains-1f042.appspot.com",
+		    messagingSenderId: "985080388063"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="assets/javascript/app.js"></script>
+	</body>
+</html>
